@@ -19,8 +19,14 @@ hist(data$GERAL, main = "General Evaluation", xlab='evaluations grade', ylab='am
 multi.hist(data[, -1])
 data[-1 -2 -3 -4 ]
 
-mcor <- cor(data[,-1])
+Mcor <- data[ , -1]
+mcor <- cor(data[ ,-1])
+Mcor
+
 corrplot(mcor)
+
+corrplot(Mcor, method = "square", type = "lower", tl.col = "black", tl.srt = 45, addCoef.col = "white", tl.cex = 0.7, number.cex = 0.7)
+
 x <- runif(n = 5, min = 1, max = 10)
 y <- runif(n = 5, min = 10, max = 15)
 z <- runif(n = 5, min = 20, max = 25)
